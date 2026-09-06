@@ -1,0 +1,188 @@
+/* Стили только для нижнего блока сайдбара (одна карточка: гость/профиль).
+   Классы префиксованы sbf- (SideBarFooter). */
+
+.sbf-root {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #E4E1D8;
+}
+
+/* Обёртка дропдауна + карточки. Когда меню открыто — они сливаются
+   в одну цельную панель (без зазора и отдельной тени у дропдауна). */
+.sbf-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Единая карточка (гость -> открывает вход, юзер -> меню) ===== */
+.sbf-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #E4E1D8;
+  border-radius: 12px;
+  background: #FBFAF6;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease, border-radius 0.15s ease;
+}
+
+.sbf-card:hover {
+  background: #F1EFE6;
+  border-color: #D8D4C6;
+}
+
+.sbf-card:active {
+  transform: scale(0.99);
+}
+
+/* Когда меню открыто: у карточки скругляются только нижние углы,
+   верх становится общей границей с дропдауном сверху */
+.sbf-group--open .sbf-card {
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid #E4E1D8;
+}
+
+.sbf-avatar {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #14140F;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sbf-avatar--admin {
+  background: #2F6F52;
+}
+
+.sbf-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sbf-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #14140F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sbf-role {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #8A8778;
+}
+
+.sbf-chevron {
+  flex: 0 0 auto;
+  color: #8A8778;
+  font-size: 12px;
+}
+
+.sbf-login-arrow {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2F6F52;
+}
+
+/* ===== Выпадающее меню профиля (теперь часть единой панели) ===== */
+.sbf-dropdown {
+  border: 1px solid #E4E1D8;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  background: #fff;
+  padding: 6px;
+  margin-bottom: -1px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 -4px 16px rgba(20, 20, 15, 0.06);
+  animation: sbf-dropdown-in 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes sbf-dropdown-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sbf-dropdown-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #F1EFE6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8A8778;
+}
+
+.sbf-dropdown-title::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2F6F52;
+  flex-shrink: 0;
+}
+
+.sbf-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  font-size: 13px;
+  color: #14140F;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sbf-dropdown-item:hover {
+  background: #F1EFE6;
+}
+
+.sbf-dropdown-icon {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.sbf-logout {
+  color: #B3261E;
+}
+
+.sbf-logout:hover {
+  background: rgba(179, 38, 30, 0.08);
+}
+
+/* ===== Свёрнутый сайдбар ===== */
+.sbf-collapsed .sbf-info,
+.sbf-collapsed .sbf-chevron,
+.sbf-collapsed .sbf-login-arrow {
+  display: none;
+}
+
+.sbf-collapsed .sbf-card {
+  justify-content: center;
+}

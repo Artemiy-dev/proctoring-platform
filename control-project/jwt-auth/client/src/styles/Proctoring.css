@@ -1,0 +1,493 @@
+.hidden {
+  display: none;
+}
+ 
+.question-text {
+  margin-bottom: 14px;
+}
+ 
+.mt-24 {
+  margin-top: 24px;
+}
+ 
+.mt-16 {
+  margin-top: 16px;
+}
+ 
+.m-0 {
+  margin: 0;
+}
+ 
+.text-center {
+  text-align: center;
+}
+ 
+.tests-table--scrollable {
+  width: 100%;
+  overflow-x: auto;
+}
+ 
+.modal-btn-auto {
+  width: auto;
+  padding: 0 20px;
+  height: 42px;
+}
+ 
+/* ---------- Кнопка "Назад" (TestRunner) ---------- */
+ 
+.back-button {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+ 
+/* ---------- ProctoringPanel: бейджи браузера ---------- */
+ 
+.proctor-check-card {
+  margin-bottom: 24px;
+}
+ 
+.browser-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+ 
+.browser-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+ 
+.browser-badge--active {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+ 
+.browser-badge--inactive {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+}
+ 
+/* ---------- ProctoringPanel: кнопки включения камеры/экрана ---------- */
+ 
+.proctor-controls-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+ 
+.proctor-toggle-btn {
+  width: auto;
+  padding: 0 20px;
+  height: 42px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+ 
+.proctor-toggle-btn--off {
+  cursor: pointer;
+  border: 1px solid #0f172a;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+ 
+.proctor-toggle-btn--on {
+  cursor: default;
+  border: 1px solid #86efac;
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+ 
+.proctor-preview-video {
+  width: 96px;
+  height: 72px;
+  border-radius: 10px;
+  background-color: #000000;
+}
+ 
+/* ---------- TestRunner: кнопка "Начать тест" ---------- */
+ 
+.test-start-btn {
+  margin-top: 20px;
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.15s ease;
+}
+ 
+.test-start-btn--enabled {
+  cursor: pointer;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+ 
+.test-start-btn--disabled {
+  cursor: not-allowed;
+  background-color: #e2e8f0;
+  color: #94a3b8;
+}
+ 
+/* ---------- Подсветка правильных/неправильных ответов
+   (используется и в TestRunner "done", и в модалке AdminRecordings) ---------- */
+ 
+.answer-option.is-correct-selected {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+}
+ 
+.answer-option.is-incorrect-selected {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+ 
+.answer-option.is-correct-unselected {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+  opacity: 0.7;
+}
+ 
+.fill-answer.is-correct {
+  border-color: #16a34a;
+}
+ 
+.fill-answer.is-incorrect {
+  border-color: #dc2626;
+}
+ 
+.correct-answer-hint {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #16a34a;
+}
+ 
+/* ---------- AdminRecordings: таблица попыток ---------- */
+ 
+.proctoring-table-grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 120px 100px 180px 84px;
+  gap: 12px;
+  align-items: center;
+  padding-right: 8px;
+}
+ 
+.proctoring-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+ 
+.proctoring-row.is-selected {
+  background-color: #f1f5f9;
+}
+ 
+.proctoring-row-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ 
+.attempt-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+ 
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+ 
+.icon-btn--gear {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+ 
+.icon-btn--delete {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  transition: all 0.2s ease;
+}
+ 
+/* ---------- AdminRecordings: дропдаун записи под строкой ---------- */
+ 
+.proctoring-dropdown {
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  padding: 20px;
+  animation: proctoring-dropdown-in 0.2s ease;
+}
+ 
+@keyframes proctoring-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.proctoring-dropdown-title {
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 12px;
+}
+ 
+/* ---------- AdminRecordings: блок записей камеры/экрана ---------- */
+ 
+.recordings-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+ 
+.recording-label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+ 
+.recording-video--camera {
+  width: 320px;
+  border-radius: 12px;
+  background-color: #000000;
+}
+ 
+.recording-video--screen {
+  width: 480px;
+  border-radius: 12px;
+  background-color: #000000;
+}
+ 
+.recording-empty {
+  color: #94a3b8;
+}
+ 
+.recording-loading {
+  color: #64748b;
+}
+ 
+/* ---------- AdminRecordings: модалка просмотра ответов ---------- */
+ 
+.review-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+ 
+.review-modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+ 
+.review-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+ 
+.review-modal-meta {
+  color: #64748b;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+ 
+.review-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #64748b;
+  line-height: 1;
+  padding: 4px;
+}
+ 
+.review-modal-empty {
+  color: #94a3b8;
+}
+ 
+.review-question-card {
+  margin-bottom: 14px;
+}
+ 
+.review-question-title {
+  margin-bottom: 8px;
+}
+ 
+.review-question-text {
+  margin-bottom: 12px;
+}
+ 
+.review-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+ 
+.btn-reset-attempt {
+  background-color: #fef3c7;
+  border: 1px solid #fbbf24;
+  color: #b45309;
+  border-radius: 8px;
+  padding: 10px 20px;
+  height: 42px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 10px;
+}
+.back-button-round {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e2e7;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.back-button-round svg {
+  flex-shrink: 0;
+}
+
+.back-button-round:hover {
+  background: #f5f5f7;
+  border-color: #d0d0d8;
+}
+
+.back-button-round:active {
+  transform: scale(0.97);
+}
+
+.attempt-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.attempt-score-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.attempt-score-badge.is-good {
+  background: #e7f8ee;
+  color: #16803c;
+}
+
+.attempt-score-badge.is-mid {
+  background: #fef6e6;
+  color: #b7791f;
+}
+
+.attempt-score-badge.is-bad {
+  background: #fdecec;
+  color: #c53030;
+}
+
+.attempt-meta-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #8a8a94;
+}
+
+.attempt-meta-date svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.floating-camera-preview {
+  position: fixed;
+  width: 140px;
+  height: 105px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 9999;
+  transition: top 0.25s ease, bottom 0.25s ease, left 0.25s ease, right 0.25s ease,
+    transform 0.15s ease;
+  background: #000;
+}
+
+.floating-camera-preview:hover {
+  transform: scale(1.03);
+}
+
+.floating-camera-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-camera-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  padding: 1px 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.floating-camera-preview:hover .floating-camera-hint {
+  opacity: 1;
+}
