@@ -1,6 +1,8 @@
-const { app, connectDB } = require('../jwt-auth/server/app.js');
+import serverApp from '../jwt-auth/server/app.js';
 
-module.exports = async(req, res) => {
+const { app, connectDB } = serverApp;
+
+export default async function handler(req, res) {
     await connectDB();
     return app(req, res);
-};
+}
